@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wealth & Health of Nations — Elite D3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow">Interactive data story</p>
+          <h1>Wealth & Health of Nations</h1>
+          <p class="subtitle">Animated GDP per person, life expectancy, and population from 1800–2009.</p>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><span id="countryCount">—</span><small>countries</small></div>
+          <div class="stat"><span id="yearLabelTop">1800</span><small>current year</small></div>
+        </div>
+      </div>
+
+      <div class="controls-panel">
+        <button id="playBtn" class="primary-btn" aria-label="Play animation">▶ Play</button>
+        <div class="slider-wrap">
+          <input id="yearSlider" type="range" min="0" max="1" value="0" step="1" />
+          <div class="slider-meta"><span id="startYear">1800</span><span id="endYear">2009</span></div>
+        </div>
+        <label class="select-wrap">Region
+          <select id="regionSelect"><option value="All">All regions</option></select>
+        </label>
+        <label class="search-wrap">Search
+          <input id="searchInput" type="search" placeholder="Find a country…" />
+        </label>
+      </div>
+
+      <div class="legend" id="legend"></div>
+
+      <div class="chart-wrap">
+        <svg id="chart" role="img" aria-label="Animated bubble chart showing income, life expectancy and population"></svg>
+        <div class="year-watermark" id="yearWatermark">1800</div>
+        <div class="tooltip" id="tooltip" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="script.js"></script>
+</body>
+</html>
